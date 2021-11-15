@@ -67,7 +67,7 @@ const WAHA_NOTES = [
     title: 'Dante',
     description:
       'Commander Dante, sometimes called the "Lord of Angels" and "Bringer of Sanguinius" Light is the current Chapter Master of the Blood Angels Space Marine Chapter, and has been the Chapter Master for 1,100 standard years.Dantes power armour incorporates a highly ornate golden death mask beneath his Iron Halo, called the Death Mask of Sanguinius, which is said to have been worn by and shaped to match the fear-inspiring features of Sanguinius, the Blood Angels primarch, at the moment of his death at the hands of the Arch-traitor Horus.',
-    date: '21.10.2021 12:37:43',
+    date: '21.10.2021 12:37:33',
     isActive: false,
     isChange: false,
   },

@@ -76,7 +76,7 @@ const WAHA_NOTES = [
     title: 'Kelbor-Hal',
     description:
       'Kelbor-Hal was the Fabricator-General of Mars, the political and spiritual leader of the Mechanicum and the magi of the Cult Mechanicus, during the latter days of the Great Crusade and the Horus Heresy in the early 31st Millennium. When the Heresy began he swore allegiance to the service of the Warmaster Horus and the forces of Chaos, becoming the first leader of what was later termed the "Dark Mechanicum."',
-    date: '16.09.2021 11:11:23',
+    date: '16.09.2021 11:11:55',
     isActive: false,
     isChange: false,
   },

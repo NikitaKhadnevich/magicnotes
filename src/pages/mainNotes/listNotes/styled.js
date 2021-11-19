@@ -46,7 +46,7 @@ export const Description = styled(
   Typography,
   appTheme
 )({
-  maxHeight: '20px',
+  maxHeight: 'auto',
   overflow: 'hidden !important',
   display: 'block !important',
   color: `${appTheme.palette.primary.dark} !important`,
@@ -70,7 +70,8 @@ export const BottonChange = styled(
   Box,
   appTheme
 )({
-  dispaly: 'initial',
+  dispaly: 'block',
+  background: 'green',
   minHeight: '40px !important',
   justifyContent: 'start !important',
   position: 'static !important',
@@ -92,7 +93,7 @@ export const Title = styled(
   width: '100%',
   margin: '0',
   textAlign: 'center',
-  color: `${appTheme.palette.primary.main} !important`,
+  color: `${appTheme.palette.secondary.main} !important`,
 });
 
 export const NoteActions = styled(

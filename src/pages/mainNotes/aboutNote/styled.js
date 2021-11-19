@@ -7,7 +7,7 @@ const AboutWrapperDesc = styled(
   appTheme
 )({
   minwidth: '100%',
-  height: 'fitContent',
+  minHeight: '65px',
   top: '10px',
   position: 'sticky',
   background: appTheme.palette.primary.main,

@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, Grid, Box } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import ListItem from '@mui/material/ListItem';
 
 import GridMain, {
   ListActive,
   ListNoActive,
   NoteText,
+  BottonChange,
   Title,
   Description,
   NoteActions,
@@ -99,21 +100,7 @@ const ListNotes = ({
               alignItems='flex-start'
               justifyContent='flex-start'
             >
-              <Box
-                key={`${item.id}edit`}
-                style={{
-                  background: 'yellow',
-                  maxHeight: '40px !important',
-                  justifyContent: 'start !important',
-                  position: 'static !important',
-                  margin: '0 !important',
-                  width: 'fitContent !important',
-                  boxShadow: 'none !important',
-                  borderRadius: 'none !important',
-                  outline: 'none !important',
-                  zIndex: '0 !important',
-                }}
-              >
+              <BottonChange key={`${item.id}edit`}>
                 <ButtonEdit
                   handleItem={handleItem}
                   callToEditNote={callToEditNote}
@@ -125,7 +112,7 @@ const ListNotes = ({
                   noteList={noteList}
                   id={item.id}
                 />
-              </Box>
+              </BottonChange>
 
               <InputChange
                 key={`${item.id}input`}

@@ -56,6 +56,22 @@ export const NoteText = styled(
   overflow: 'auto !important',
 });
 
+export const BottonChange = styled(
+  Box,
+  appTheme
+)({
+  background: 'tomato',
+  maxHeight: '40px',
+  justifyContent: 'start !important',
+  position: 'static !important',
+  margin: '0 !important',
+  width: 'fitContent !important',
+  boxShadow: 'none !important',
+  borderRadius: 'none !important',
+  outline: 'none !important',
+  zIndex: '0 !important',
+});
+
 export const Title = styled(
   Typography,
   appTheme

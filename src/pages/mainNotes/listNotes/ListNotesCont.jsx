@@ -76,7 +76,7 @@ const ListNotes = ({
                 <NoteText key={`${item.id}listbox`}>
                   <ListItem>
                     <Title variant='h6' id={item.title}>
-                      {item.title}zzz
+                      {item.title}
                     </Title>
                   </ListItem>
 

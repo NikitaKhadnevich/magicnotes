@@ -51,7 +51,7 @@ export const NoteText = styled(
   width: '100%',
   margin: '0',
   alignSelf: 'center !important',
-  maxHeight: 'fit-content !importnat',
+  maxHeight: '100% !importnat',
   overflow: 'auto !important',
   backGround: appTheme.palette.primary.light,
 });
@@ -60,9 +60,8 @@ export const BottonChange = styled(
   Box,
   appTheme
 )({
-  dispaly: 'block !important',
-  background: 'tomato',
-  maxHeight: '40px !important',
+  dispaly: 'initial',
+  minHeight: '40px !important',
   justifyContent: 'start !important',
   position: 'static !important',
   margin: '0 !important',
@@ -83,7 +82,7 @@ export const Title = styled(
   width: '100%',
   margin: '0',
   textAlign: 'center',
-  color: `${appTheme.palette.secondary.main} !important`,
+  color: `${appTheme.palette.secondary.dark} !important`,
 });
 
 export const Description = styled(

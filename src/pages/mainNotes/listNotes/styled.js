@@ -42,6 +42,16 @@ export const ListNoActive = styled(
   boxShadow: `0px 0px 15px 3px ${appTheme.palette.primary.main}`,
 });
 
+export const Description = styled(
+  Typography,
+  appTheme
+)({
+  maxHeight: '20px',
+  overflow: 'hidden !important',
+  display: 'block !important',
+  color: `${appTheme.palette.primary.dark} !important`,
+});
+
 export const NoteText = styled(
   Box,
   appTheme
@@ -82,17 +92,7 @@ export const Title = styled(
   width: '100%',
   margin: '0',
   textAlign: 'center',
-  color: `${appTheme.palette.secondary.dark} !important`,
-});
-
-export const Description = styled(
-  Typography,
-  appTheme
-)({
-  maxHeight: '20px !important',
-  overflow: 'hidden !important',
-  display: 'block !important',
-  color: `${appTheme.palette.primary.dark} !important`,
+  color: `${appTheme.palette.primary.main} !important`,
 });
 
 export const NoteActions = styled(

@@ -12,9 +12,6 @@ const AboutWrapperDesc = styled(
   position: 'sticky',
   background: appTheme.palette.primary.main,
   zIndex: 2,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
   boxShadow: `0px 0px 10px 5px ${appTheme.palette.primary.dark}`,
   borderRadius: '7px',
   '& p': {

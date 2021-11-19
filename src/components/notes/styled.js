@@ -20,7 +20,7 @@ export const ChangeInputHide = styled(
   appTheme
 )({
   display: 'flex',
-  maxidth: '0px !important',
+  maxWidth: '0px !important',
   maxHeight: '45px',
 });
 

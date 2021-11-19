@@ -70,8 +70,8 @@ export const BottonChange = styled(
   Box,
   appTheme
 )({
-  dispaly: 'block',
-  background: 'green',
+  display: 'block !important',
+  background: 'yellow',
   minHeight: '40px !important',
   justifyContent: 'start !important',
   position: 'static !important',

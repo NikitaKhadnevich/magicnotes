@@ -51,6 +51,9 @@ export const NoteText = styled(
   width: '100%',
   margin: '0',
   alignSelf: 'center',
+  background: 'green',
+  maxHeight: 'fitContent !importnat',
+  overflow: 'auto !important',
 });
 
 export const Title = styled(

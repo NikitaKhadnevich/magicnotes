@@ -94,7 +94,20 @@ const ListNotes = ({
               alignItems='flex-start'
               justifyContent='flex-start'
             >
-              <Box key={`${item.id}edit`}>
+              <Box
+                key={`${item.id}edit`}
+                style={{
+                  background: 'red',
+                  maxHeight: '40px',
+                  justifyContent: 'start',
+                  position: 'static',
+                  margin: '0',
+                  width: 'fitContent',
+                  boxShadow: 'none',
+                  borderRadius: 'none',
+                  outline: 'none',
+                }}
+              >
                 <ButtonEdit
                   handleItem={handleItem}
                   callToEditNote={callToEditNote}

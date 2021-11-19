@@ -10,7 +10,7 @@ const ChangeInputShow = styled(
   height: '100%',
   display: 'flex',
   width: '100%',
-  justifyContent: 'space-between',
+  justifyContent: 'space-between !important',
   marginLeft: '-30px !important',
 });
 export default ChangeInputShow;

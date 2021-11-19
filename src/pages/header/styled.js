@@ -6,6 +6,7 @@ const HeaderNav = styled(
   AppBar,
   appTheme
 )({
+  maxHeight: '70px !important',
   position: 'relative !important',
   background: `${appTheme.palette.primary.dark} !important`,
   margin: '5px 0px !important',

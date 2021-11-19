@@ -7,6 +7,7 @@ const WAHA_NOTES = [
     date: '06.11.2021 18:12:40',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const WAHA_NOTES = [
     date: '09.11.2021 14:10:12',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const WAHA_NOTES = [
     date: '03.10.2021 4:19:12',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const WAHA_NOTES = [
     date: '03.09.2021 7:40:14',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ const WAHA_NOTES = [
     date: '22.09.2021 10:18:12',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ const WAHA_NOTES = [
     date: '22.10.2021 10:58:54',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 7,
@@ -61,24 +67,27 @@ const WAHA_NOTES = [
     date: '2.09.2021 22:28:12',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 8,
     title: 'Dante',
     description:
       'Commander Dante, sometimes called the "Lord of Angels" and "Bringer of Sanguinius" Light is the current Chapter Master of the Blood Angels Space Marine Chapter, and has been the Chapter Master for 1,100 standard years.Dantes power armour incorporates a highly ornate golden death mask beneath his Iron Halo, called the Death Mask of Sanguinius, which is said to have been worn by and shaped to match the fear-inspiring features of Sanguinius, the Blood Angels primarch, at the moment of his death at the hands of the Arch-traitor Horus.',
-    date: '21.10.2021 12:37:33',
+    date: '21.10.2021 12:37:43',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
   {
     id: 9,
     title: 'Kelbor-Hal',
     description:
       'Kelbor-Hal was the Fabricator-General of Mars, the political and spiritual leader of the Mechanicum and the magi of the Cult Mechanicus, during the latter days of the Great Crusade and the Horus Heresy in the early 31st Millennium. When the Heresy began he swore allegiance to the service of the Warmaster Horus and the forces of Chaos, becoming the first leader of what was later termed the "Dark Mechanicum."',
-    date: '16.09.2021 11:11:55',
+    date: '16.09.2021 11:11:23',
     isActive: false,
     isChange: false,
+    sharedTime: '',
   },
 ];
 

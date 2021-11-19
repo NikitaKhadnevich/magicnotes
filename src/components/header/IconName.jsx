@@ -6,9 +6,8 @@ import IconBlock from './styled';
 
 const IconName = () => (
   <IconBlock>
-    <Typography variant='h6'>Waha Notes</Typography>
-    <Typography variant='h6'>Waha Notes</Typography>
     <BookIcon />
+    <Typography variant='h6'>Waha Notes</Typography>
   </IconBlock>
 );
 export default IconName;

@@ -52,24 +52,27 @@ export const NoteText = styled(
   margin: '0',
   alignSelf: 'center !important',
   background: 'green',
-  maxHeight: 'fitContent !importnat',
+  maxHeight: 'fit-content !importnat',
   overflow: 'auto !important',
+  backGround: appTheme.palette.primary.light,
 });
 
 export const BottonChange = styled(
   Box,
   appTheme
 )({
+  dispaly: 'block !important',
   background: 'tomato',
-  maxHeight: '40px',
+  maxHeight: '40px !important',
   justifyContent: 'start !important',
   position: 'static !important',
   margin: '0 !important',
-  width: 'fitContent !important',
+  width: 'fit-content !important',
   boxShadow: 'none !important',
-  borderRadius: 'none !important',
+  borderRadius: '0px !important',
   outline: 'none !important',
   zIndex: '0 !important',
+  textAlign: 'start',
 });
 
 export const Title = styled(
@@ -102,7 +105,7 @@ export const NoteActions = styled(
   maxHeight: 'fitContent',
   margin: 0,
   marginTop: '5px',
-  background: appTheme.palette.primary.light,
+  background: appTheme.palette.primary.main,
   display: 'flex',
 });
 

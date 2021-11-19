@@ -10,7 +10,7 @@ const AboutWrapperDesc = styled(
   minHeight: '65px',
   top: '10px',
   position: 'sticky',
-  background: appTheme.palette.secondary.main,
+  background: appTheme.palette.primary.main,
   zIndex: 2,
   boxShadow: `0px 0px 10px 5px ${appTheme.palette.primary.dark}`,
   borderRadius: '7px',

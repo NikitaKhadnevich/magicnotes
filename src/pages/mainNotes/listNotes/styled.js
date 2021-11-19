@@ -70,17 +70,17 @@ export const BottonChange = styled(
   Box,
   appTheme
 )({
-  display: 'block !important',
-  background: 'yellow',
+  display: 'block',
+  background: 'red',
   minHeight: '40px !important',
-  justifyContent: 'start !important',
+  justifyContent: 'start',
   position: 'static !important',
   margin: '0 !important',
   width: 'fit-content !important',
   boxShadow: 'none !important',
   borderRadius: '0px !important',
   outline: 'none !important',
-  zIndex: '0 !important',
+  zIndex: '0',
   textAlign: 'start',
 });
 
@@ -100,8 +100,8 @@ export const NoteActions = styled(
   Stack,
   appTheme
 )({
-  width: '100%',
-  maxHeight: 'fitContent',
+  width: '100% !important',
+  maxHeight: 'fit-content',
   margin: 0,
   marginTop: '5px',
   background: appTheme.palette.primary.main,

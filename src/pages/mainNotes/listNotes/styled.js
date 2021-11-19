@@ -42,16 +42,6 @@ export const ListNoActive = styled(
   boxShadow: `0px 0px 15px 3px ${appTheme.palette.primary.main}`,
 });
 
-export const Description = styled(
-  Typography,
-  appTheme
-)({
-  maxHeight: 'auto',
-  overflow: 'hidden !important',
-  display: 'block !important',
-  color: `${appTheme.palette.primary.dark} !important`,
-});
-
 export const NoteText = styled(
   Box,
   appTheme
@@ -66,24 +56,6 @@ export const NoteText = styled(
   backGround: appTheme.palette.primary.light,
 });
 
-export const BottonChange = styled(
-  Box,
-  appTheme
-)({
-  display: 'block',
-  background: 'red',
-  minHeight: '40px !important',
-  justifyContent: 'start',
-  position: 'static !important',
-  margin: '0 !important',
-  width: 'fit-content !important',
-  boxShadow: 'none !important',
-  borderRadius: '0px !important',
-  outline: 'none !important',
-  zIndex: '0',
-  textAlign: 'start',
-});
-
 export const Title = styled(
   Typography,
   appTheme
@@ -96,6 +68,16 @@ export const Title = styled(
   color: `${appTheme.palette.secondary.main} !important`,
 });
 
+export const Description = styled(
+  Typography,
+  appTheme
+)({
+  maxHeight: 'auto',
+  overflow: 'hidden !important',
+  display: 'block !important',
+  color: `${appTheme.palette.primary.dark} !important`,
+});
+
 export const NoteActions = styled(
   Stack,
   appTheme
@@ -106,6 +88,24 @@ export const NoteActions = styled(
   marginTop: '5px',
   background: appTheme.palette.primary.main,
   display: 'flex',
+});
+
+export const BottonChange = styled(
+  Box,
+  appTheme
+)({
+  display: 'block !important',
+  background: 'tomato',
+  minHeight: '40px !important',
+  justifyContent: 'start',
+  position: 'static !important',
+  margin: '0 !important',
+  width: 'fit-content !important',
+  boxShadow: 'none !important',
+  borderRadius: '0px !important',
+  outline: 'none !important',
+  zIndex: '0',
+  textAlign: 'start',
 });
 
 export const NoAddedNotes = styled(

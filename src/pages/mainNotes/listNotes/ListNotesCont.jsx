@@ -57,8 +57,11 @@ const ListNotes = ({
                   </ListItem>
 
                   <ListItem>
-                    <Typography variant='subtitle2'>
-                      {item.date} style={{ color: 'primary.main !important' }}
+                    <Typography
+                      variant='subtitle2'
+                      style={{ color: 'primary.main !important' }}
+                    >
+                      {item.date}
                     </Typography>
                   </ListItem>
                 </NoteText>

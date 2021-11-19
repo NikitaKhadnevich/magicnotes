@@ -75,7 +75,7 @@ export const Description = styled(
   maxHeight: '20px !important',
   overflow: 'hidden !important',
   display: 'block !important',
-  color: `${appTheme.palette.parimary.main} !important`,
+  color: `${appTheme.palette.primary.main} !important`,
 });
 
 export const NoteActions = styled(

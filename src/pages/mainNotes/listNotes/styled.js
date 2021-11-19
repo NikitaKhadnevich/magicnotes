@@ -51,7 +51,6 @@ export const NoteText = styled(
   width: '100%',
   margin: '0',
   alignSelf: 'center !important',
-  background: 'green',
   maxHeight: 'fit-content !importnat',
   overflow: 'auto !important',
   backGround: appTheme.palette.primary.light,
@@ -94,7 +93,7 @@ export const Description = styled(
   maxHeight: '20px !important',
   overflow: 'hidden !important',
   display: 'block !important',
-  color: `${appTheme.palette.primary.main} !important`,
+  color: `${appTheme.palette.primary.dark} !important`,
 });
 
 export const NoteActions = styled(

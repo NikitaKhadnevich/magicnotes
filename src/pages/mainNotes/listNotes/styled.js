@@ -46,11 +46,11 @@ export const NoteText = styled(
   Box,
   appTheme
 )({
-  display: 'flex',
+  display: 'flex !important',
   flexDirection: 'column',
   width: '100%',
   margin: '0',
-  alignSelf: 'center',
+  alignSelf: 'center !important',
   background: 'green',
   maxHeight: 'fitContent !importnat',
   overflow: 'auto !important',
@@ -65,16 +65,17 @@ export const Title = styled(
   width: '100%',
   margin: '0',
   textAlign: 'center',
+  color: `${appTheme.palette.secondary.main} !important`,
 });
 
 export const Description = styled(
   Typography,
   appTheme
 )({
-  maxHeight: '20px',
-  overflow: 'hidden',
-  display: 'block',
-  color: appTheme.palette.primary.dark,
+  maxHeight: '20px !important',
+  overflow: 'hidden !important',
+  display: 'block !important',
+  color: `${appTheme.palette.parimary.main} !important`,
 });
 
 export const NoteActions = styled(

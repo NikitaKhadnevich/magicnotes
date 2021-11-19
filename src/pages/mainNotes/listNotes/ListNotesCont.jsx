@@ -57,7 +57,9 @@ const ListNotes = ({
                   </ListItem>
 
                   <ListItem>
-                    <Typography variant='subtitle2'>{item.date}</Typography>
+                    <Typography variant='subtitle2'>
+                      {item.date} style={{ color: 'primary.main !important' }}
+                    </Typography>
                   </ListItem>
                 </NoteText>
               </ListActive>
@@ -97,15 +99,16 @@ const ListNotes = ({
               <Box
                 key={`${item.id}edit`}
                 style={{
-                  background: 'red',
-                  maxHeight: '40px',
-                  justifyContent: 'start',
-                  position: 'static',
-                  margin: '0',
-                  width: 'fitContent',
-                  boxShadow: 'none',
-                  borderRadius: 'none',
-                  outline: 'none',
+                  background: 'yellow',
+                  maxHeight: '40px !important',
+                  justifyContent: 'start !important',
+                  position: 'static !important',
+                  margin: '0 !important',
+                  width: 'fitContent !important',
+                  boxShadow: 'none !important',
+                  borderRadius: 'none !important',
+                  outline: 'none !important',
+                  zIndex: '0 !important',
                 }}
               >
                 <ButtonEdit

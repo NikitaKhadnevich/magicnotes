@@ -7,7 +7,7 @@ const HeaderNav = styled(
   appTheme
 )({
   minHeight: '0px !important',
-  maxHeight: '70px !important',
+  maxHeight: 'fit-content !important',
   position: 'relative !important',
   background: `${appTheme.palette.primary.dark} !important`,
   margin: '5px 0px ',
@@ -23,5 +23,5 @@ export const ToolbarNav = styled(
   justifyContent: 'center !important',
   flexWrap: 'wrap',
   gap: '1rem',
-  padding: '0 ',
+  padding: '0',
 });

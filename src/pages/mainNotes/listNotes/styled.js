@@ -17,9 +17,9 @@ export const ListActive = styled(
   appTheme
 )({
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   alignItems: 'center',
-  minHeight: 'fitContent',
+  minHeight: 'fit-content',
   boxSizing: 'border-box',
   borderRadius: '7px',
   background: appTheme.palette.primary.light,
@@ -34,7 +34,7 @@ export const ListNoActive = styled(
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  minHeight: '140px',
+  minHeight: 'fit-content',
   boxSizing: 'border-box',
   borderRadius: '7px',
   background: appTheme.palette.primary.main,
@@ -48,12 +48,14 @@ export const NoteText = styled(
 )({
   display: 'flex !important',
   flexDirection: 'column',
-  width: '100%',
-  margin: '0',
+  width: '100% !important',
+  margin: '0 !important',
   alignSelf: 'center !important',
-  maxHeight: '100% !importnat',
-  overflow: 'auto !important',
-  backGround: appTheme.palette.primary.light,
+  maxHeight: 'fit-content !importnat',
+  overflow: 'auto',
+  boxShadow: 'none',
+  outline: 'none',
+  background: `${appTheme.palette.primary.main} !important`,
 });
 
 export const Title = styled(
@@ -82,11 +84,11 @@ export const NoteActions = styled(
   Stack,
   appTheme
 )({
-  width: '100% !important',
+  width: '100%',
   maxHeight: 'fit-content',
   margin: 0,
   marginTop: '5px',
-  background: appTheme.palette.primary.main,
+  background: appTheme.palette.primary.light,
   display: 'flex',
 });
 
@@ -94,18 +96,18 @@ export const BottonChange = styled(
   Box,
   appTheme
 )({
-  display: 'block !important',
-  background: 'tomato',
+  display: 'block',
   minHeight: '40px !important',
   justifyContent: 'start',
-  position: 'static !important',
-  margin: '0 !important',
-  width: 'fit-content !important',
-  boxShadow: 'none !important',
-  borderRadius: '0px !important',
+  position: 'static',
+  margin: '0',
+  width: 'fit-content',
+  boxShadow: 'none',
+  borderRadius: '0px',
   outline: 'none !important',
   zIndex: '0',
   textAlign: 'start',
+  background: 'none',
 });
 
 export const NoAddedNotes = styled(

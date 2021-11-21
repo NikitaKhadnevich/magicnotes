@@ -19,8 +19,7 @@ export const ChangeInputHide = styled(
   Box,
   appTheme
 )({
-  display: 'flex',
-  maxWidth: '0px !important',
+  display: 'block',
   maxHeight: '45px',
 });
 

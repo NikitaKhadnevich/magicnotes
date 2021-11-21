@@ -28,7 +28,6 @@ const InputChange = ({
       {isChange ? (
         <ChangeInputShow>
           <TextAr
-            style={{ width: '100%' }}
             label='Note Description'
             defaultValue={description}
             multiline

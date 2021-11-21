@@ -7,10 +7,10 @@ import GridMain, {
   ListActive,
   ListNoActive,
   NoteText,
-  BottonChange,
   Title,
   Description,
   NoteActions,
+  BottonChange,
   NoAddedNotes,
 } from './styled';
 
@@ -71,9 +71,9 @@ const ListNotes = ({
               <ListNoActive
                 onClick={() => handleItem(item.id, noteList, chooseNote)}
                 sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
-                key={`${item.id}gridlist`}
+                key={`${item.id}gridlistNoActive`}
               >
-                <NoteText key={`${item.id}listbox`}>
+                <NoteText key={`${item.id}listboxNoActive`}>
                   <ListItem>
                     <Title variant='h6' id={item.title}>
                       {item.title}

@@ -1,134 +1,163 @@
-/* eslint-disable no-unused-expressions */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, Grid, Box } from '@material-ui/core';
-import List from '@mui/material/List';
+import { Typography, Grid } from '@material-ui/core';
 import ListItem from '@mui/material/ListItem';
-import Stack from '@mui/material/Stack';
-import WAHA_NOTES, { SHORT_DESC } from '../../../config/constants/initNoteData';
-import useStyles from './styled';
-import chooseNote from '../../../utils/ChooseNote';
-import callToEditNote from '../../../utils/CallToEditNote';
-import saveEditedNote from '../../../utils/SaveEditedNote';
-import deleteNote from '../../../utils/DeleteNote';
-import ButtonChange from '../../../components/notes/ActionButtons';
-import InputChange from '../../../components/notes/InputChange';
-import setToLocalStorage, {
-  getToLocalStorage,
-} from '../../../utils/localStorage/SetGetLocStor';
 
-const ListNotes = ({ sentAbout }) => {
-  const [noteList, setNoteList] = useState(WAHA_NOTES);
-  const classes = useStyles();
+import GridMain, {
+  ListActive,
+  ListNoActive,
+  NoteText,
+  Title,
+  Description,
+  NoteActions,
+  BottonChange,
+  NoAddedNotes,
+} from './styled';
 
-  const handleItem = (id, currentState = noteList, actionFunction) => {
-    const filtredNotes = actionFunction(id, currentState);
-    setNoteList(() => [...filtredNotes]);
-  };
-  const handleDelete = (id, currentState = noteList) => {
-    const actualNotes = deleteNote(id, currentState);
-    setNoteList(() => [...actualNotes]);
-  };
-  const handleSaveNote = (id, valueFromInput) => {
-    const savedNotes = saveEditedNote(id, noteList, valueFromInput);
-    setNoteList(() => [...savedNotes]);
-  };
+import {
+  ButtonEdit,
+  ButtonShare,
+  InputChange,
+  ERROR_MESSAGES,
+} from './ListNotesReceiver';
 
-  useEffect(() => {
-    const localNote = getToLocalStorage();
-    if (localNote) {
-      setNoteList(localNote);
-    }
-  }, []);
-  useEffect(() => {
-    sentAbout(noteList);
-    !noteList.length
-      ? setToLocalStorage(WAHA_NOTES)
-      : setToLocalStorage(noteList);
-  }, [noteList]);
+const ListNotes = ({
+  handleItem,
+  handleShare,
+  handleSaveNote,
+  handleDelete,
+  chooseNote,
+  sliceDescription,
+  callToEditNote,
+  noteList,
+}) => {
+  const { noAddedNotes } = ERROR_MESSAGES;
+
   return (
-    <>
-      <Grid container spacing={2} className={classes.gridNotes}>
-        {noteList
-          ? noteList.map((item, index) => (
-              <Grid item xs={12} sm={4} md={4}>
-                <List
-                  onClick={() => handleItem(item.id, noteList, chooseNote)}
-                  sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
-                  className={
-                    item.isActive ? classes.listItemActive : classes.listItem
-                  }
-                  key={item.id}
-                >
-                  <Box className={classes.noteText} key={Math.random()}>
-                    <ListItem>
-                      <Typography
-                        variant='h6'
-                        className={classes.title}
-                        id={item.title}
-                      >
-                        {item.title}
-                      </Typography>
-                    </ListItem>
+    <GridMain container spacing={2}>
+      {noteList ? (
+        noteList.map((item, index) => (
+          <Grid item xs={12} sm={6} md={4}>
+            {item.isActive ? (
+              <ListActive
+                onClick={() => handleItem(item.id, noteList, chooseNote)}
+                sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
+                key={`${item.id}gridlist`}
+              >
+                <NoteText key={`${item.id}listbox`}>
+                  <ListItem>
+                    <Title variant='h6' id={item.title}>
+                      {item.title}
+                    </Title>
+                  </ListItem>
 
-                    <ListItem sx={{ paddingTop: '0', paddingBottom: '0' }}>
-                      <Typography
-                        variant='body2'
-                        className={classes.description}
-                      >
-                        {item.description.slice(0, SHORT_DESC.limit)}
-                        {SHORT_DESC.after}
-                      </Typography>
-                    </ListItem>
+                  <ListItem sx={{ paddingTop: '0', paddingBottom: '0' }}>
+                    <Description variant='body2'>
+                      {sliceDescription(item.description)}
+                    </Description>
+                  </ListItem>
 
-                    <ListItem>
-                      <Typography variant='subtitle2'>{item.date}</Typography>
-                    </ListItem>
-                  </Box>
-                </List>
+                  <ListItem>
+                    <Typography
+                      variant='subtitle2'
+                      style={{ color: 'primary.main !important' }}
+                    >
+                      {item.date}
+                    </Typography>
+                  </ListItem>
+                </NoteText>
+              </ListActive>
+            ) : (
+              <ListNoActive
+                onClick={() => handleItem(item.id, noteList, chooseNote)}
+                sx={{ width: '100%', padding: '0px', cursor: 'pointer' }}
+                key={`${item.id}gridlistNoActive`}
+              >
+                <NoteText key={`${item.id}listboxNoActive`}>
+                  <ListItem>
+                    <Title variant='h6' id={item.title}>
+                      {item.title}
+                    </Title>
+                  </ListItem>
 
-                <Stack
-                  key={Math.random()}
-                  direction='row'
-                  spacing={-3}
-                  alignItems='flex-start'
-                  justifyContent='flex-start'
-                  className={classes.noteActions}
-                >
-                  <Box key={Math.random()}>
-                    <ButtonChange
-                      changeNote={handleItem}
-                      callToEditNote={callToEditNote}
-                      noteList={noteList}
-                      id={item.id}
-                    />
-                  </Box>
+                  <ListItem sx={{ paddingTop: '0', paddingBottom: '0' }}>
+                    <Description variant='body2'>
+                      {sliceDescription(item.description)}
+                    </Description>
+                  </ListItem>
 
-                  <InputChange
-                    key={Math.random()}
-                    saveEditedNote={handleSaveNote}
-                    deleteNotes={handleDelete}
-                    isChange={item.isChange}
-                    description={item.description}
-                    id={item.id}
-                    index={index}
-                    currentState={noteList}
-                  />
-                </Stack>
-              </Grid>
-            ))
-          : null}
-      </Grid>
-    </>
+                  <ListItem>
+                    <Typography variant='subtitle2'>{item.date}</Typography>
+                  </ListItem>
+                </NoteText>
+              </ListNoActive>
+            )}
+
+            <NoteActions
+              key={`${item.id}buttonStack`}
+              direction='row'
+              spacing={-3}
+              alignItems='flex-start'
+              justifyContent='flex-start'
+            >
+              <BottonChange key={`${item.id}edit`}>
+                <ButtonEdit
+                  handleItem={handleItem}
+                  callToEditNote={callToEditNote}
+                  noteList={noteList}
+                  id={item.id}
+                />
+                <ButtonShare
+                  handleShare={handleShare}
+                  noteList={noteList}
+                  id={item.id}
+                />
+              </BottonChange>
+
+              <InputChange
+                key={`${item.id}input`}
+                handleSaveNote={handleSaveNote}
+                handleDelete={handleDelete}
+                isChange={item.isChange}
+                description={item.description}
+                id={item.id}
+                index={index}
+                currentState={noteList}
+              />
+            </NoteActions>
+          </Grid>
+        ))
+      ) : (
+        <NoAddedNotes>
+          <Typography component='h5' variant='h5' align='center'>
+            {noAddedNotes}
+          </Typography>
+        </NoAddedNotes>
+      )}
+    </GridMain>
   );
 };
 
 ListNotes.propTypes = {
-  sentAbout: PropTypes.func,
+  noteList: PropTypes.string,
+  callToEditNote: PropTypes.func,
+  sliceDescription: PropTypes.func,
+  chooseNote: PropTypes.func,
+  handleItem: PropTypes.func,
+  handleShare: PropTypes.func,
+  handleSaveNote: PropTypes.func,
+  handleDelete: PropTypes.func,
 };
 
 ListNotes.defaultProps = {
-  sentAbout: 'sentAbout',
+  noteList: 'noteList',
+  callToEditNote: 'callToEditNote',
+  sliceDescription: 'sliceDescription',
+  chooseNote: 'chooseNote',
+  handleItem: 'handleItem',
+  handleShare: 'handleShare',
+  handleSaveNote: 'handleSaveNote',
+  handleDelete: 'handleDelete',
 };
 
 export default ListNotes;

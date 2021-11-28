@@ -1,2 +1,0 @@
-(this.webpackJsonpmagicnotes=this.webpackJsonpmagicnotes||[]).push([[7],{233:function(n,t,e){"use strict";e.r(t);e(0);var a=e(141),c=e(101),i=e(102),s=e(2);t.default=function(){var n=i.a.visit404;return Object(s.jsx)(c.a,{children:Object(s.jsx)(a.a,{component:"h5",variant:"h5",align:"center",children:n})})}}}]);
-//# sourceMappingURL=7.485a0452.chunk.js.map

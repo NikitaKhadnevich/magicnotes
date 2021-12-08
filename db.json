@@ -17,24 +17,6 @@
       "password": "1234",
       "confirmPassword": "1234",
       "id": 2
-    },
-    {
-      "email": "1belfix@gmail.com",
-      "firstName": "Nikita",
-      "lastName": "Nikita",
-      "birthday": "2020.12.23",
-      "password": "1234",
-      "confirmPassword": "1234",
-      "id": 3
-    },
-    {
-      "email": "1vadim-swich@yandex.ru",
-      "firstName": "Vadim",
-      "lastName": "Vadim",
-      "birthday": "2020.12.23",
-      "password": "1234",
-      "confirmPassword": "1234",
-      "id": 4
     }
   ]
 }

@@ -1,35 +1,51 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
 import { ERROR_MESSAGES } from './RestReceiver';
+import { notesURL } from './apiConstants';
 
-const { getError, postError } = ERROR_MESSAGES;
+const { getError, postError, putError, deleteError } = ERROR_MESSAGES;
 
-function runGETusers(baseUrl) {
-  axios
-    .get(baseUrl)
-    .then((res) => res.json())
+function runGETusers(fetchState) {
+  return axios
+    .get(notesURL)
+    .then((resNotes) => resNotes.data)
+    .catch((err) => new Error(getError))
+    .finally(() => fetchState(false));
+}
+
+function runGETInfinityNotes({ pageParam = 1 }) {
+  return axios
+    .get(`${notesURL}?_limit=4&_page=${pageParam}`)
+    .then((resNotes) => resNotes)
     .catch((err) => new Error(getError));
 }
 
 function runPOSTuser(baseUrl, obj) {
   return axios
     .post(baseUrl, obj)
-    .then((res) => res.data) // Результат ответа от сервера)
+    .then((resNotes) => resNotes.data)
     .catch((err) => new Error(postError));
 }
 
-export { runGETusers, runPOSTuser };
+function runUpdateUser(baseUrl, { ...updateUser }) {
+  return axios
+    .put(`${baseUrl}`, updateUser)
+    .then((resNotes) => resNotes.data)
+    .catch((err) => new Error(putError));
+}
 
-// letPATCH(baseUrl, obj, id) {
-//   return axios
-//     .patch(`${baseUrl}` + `/` + `${id}`, obj)
-//     .then((res) => console.log(res)) // Результат ответа от сервера
-//     .catch((err) => new Error("Ошибка в запросе PATCH"));
-// }
+function runDELETEuser(baseUrl, id) {
+  return axios
+    .delete(`${baseUrl}/${id}`)
+    .then((resNotes) => resNotes.data)
+    .catch((err) => new Error(deleteError));
+}
 
-// letDELETE(baseUrl, id) {
-//   return axios
-//     .delete(`${baseUrl}` + `/` + `${id}`)
-//     .then((res) => console.log(res))s
-//     .catch((err) => new Error("Ошибка в запросе DELETE"));
-// }
+export {
+  runGETusers,
+  runPOSTuser,
+  runUpdateUser,
+  runDELETEuser,
+  runGETInfinityNotes,
+};

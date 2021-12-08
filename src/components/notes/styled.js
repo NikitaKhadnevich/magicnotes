@@ -1,6 +1,7 @@
 import { styled } from '@mui/styles';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { Container } from '@material-ui/core';
 import appTheme from '../../globalStyles';
 
 const ChangeInputShow = styled(
@@ -13,9 +14,8 @@ const ChangeInputShow = styled(
   justifyContent: 'space-between !important',
   marginLeft: '-30px !important important',
 });
-export default ChangeInputShow;
 
-export const ChangeInputHide = styled(
+const ChangeInputHide = styled(
   Box,
   appTheme
 )({
@@ -23,9 +23,21 @@ export const ChangeInputHide = styled(
   maxHeight: '45px',
 });
 
-export const TextAr = styled(
+const TextAr = styled(
   TextField,
   appTheme
 )({
   width: '100%',
 });
+
+const NotesStat = styled(
+  Container,
+  appTheme
+)({
+  position: 'relative',
+  minHeight: 'fit-content',
+  marginBottom: '50px',
+  textAlign: 'center',
+});
+
+export { ChangeInputShow, ChangeInputHide, TextAr, NotesStat };

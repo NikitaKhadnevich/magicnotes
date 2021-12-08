@@ -16,6 +16,16 @@ import {
   GET_SIGN_OUT,
 } from '../../api/signToolkit/signToolkit';
 
+import {
+  setToLocalStorage,
+  getToLocalStorage,
+} from '../../utils/localStorage/SetGetLocStor';
+
+import {
+  AUTH_LOCAL_DATA,
+  AUTH_LOCAL_STATUS,
+} from '../../config/constants/localStoreKeys';
+
 const { notes, notFound, sharedNotes, about, signUp, signIn } = ROUTERS;
 
 export {
@@ -34,4 +44,8 @@ export {
   SET_SIGNIN_ERROR,
   GET_SIGN_OUT,
   isSignInError,
+  setToLocalStorage,
+  getToLocalStorage,
+  AUTH_LOCAL_DATA,
+  AUTH_LOCAL_STATUS,
 };

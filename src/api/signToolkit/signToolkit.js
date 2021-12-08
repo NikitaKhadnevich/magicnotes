@@ -9,6 +9,7 @@ export const initSignState = {
   userData: '',
   isSignUp: false,
   isSignIn: false,
+  isSignOut: true,
   isSignUpError: false,
   isSignInError: false,
 };
@@ -33,7 +34,7 @@ export const signAPI = createSlice({
       state, (state.isSignInError = action.payload);
     },
     GET_SIGN_OUT: (state, action) => {
-      state, (state.isSignIp = action.payload);
+      state, (state.isSignOut = action.payload);
     },
   },
 });

@@ -62,6 +62,7 @@ export const UserBox = styled(
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
+  background: appTheme.palette.primary.dark,
   '& p': {
     textAlign: 'center',
     margin: '3px 5px',

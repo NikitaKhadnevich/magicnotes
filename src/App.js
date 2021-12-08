@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { CssBaseline } from '@material-ui/core';
 import {
   BrowserRouter as Router,
@@ -7,8 +8,7 @@ import {
   Routes,
   Navigate,
 } from 'react-router-dom';
-import AppContainer from './styledApp';
-import PrivateRoute from './utils/routing/PrivateRoute';
+import AppWrapper from './styledApp';
 
 import {
   MainNotesContainer,
@@ -19,24 +19,56 @@ import {
   FormikUp,
   FormikIn,
   ROUTERS,
+  SET_AUTH_USER_DATA,
+  IS_SIGN_IN,
+  SetLocalHelper,
+  PrivateRoute,
+  PrivateSignRoute,
 } from './AppReceiver';
 
 function App() {
   const { notes, notFound, sharedNotes, about, signUp, signIn } = ROUTERS;
+  const dispatch = useDispatch();
+  const [authData, setAuthData] = useState([]);
+  const [authState, setAuthState] = useState('');
+
+  useEffect(() => {
+    SetLocalHelper(setAuthData, setAuthState);
+  }, []);
+
+  useEffect(() => {
+    dispatch(SET_AUTH_USER_DATA(authData));
+    dispatch(IS_SIGN_IN(authState));
+  }, [authState, authData]);
 
   return (
     <>
       <CssBaseline />
       <Router>
-        <AppContainer>
+        <AppWrapper>
           <HeaderNav />
           <Routes>
             <Route path='*' element={<Navigate replace to={notFound} />} />
             <Route path={notFound} element={<VisitWrapper />} />
             <Route path={about} element={<AboutWrapper />} />
-            <Route path={signUp} element={<FormikUp />} />
-            <Route path={signIn} element={<FormikIn />} />
-
+            <Route
+              exact
+              path={signUp}
+              element={
+                <PrivateSignRoute>
+                  <FormikUp />
+                </PrivateSignRoute>
+              }
+            />
+            <Route
+              exact
+              path={signIn}
+              element={
+                <PrivateSignRoute>
+                  <FormikIn />
+                </PrivateSignRoute>
+              }
+            />
             <Route
               exact
               path={notes}
@@ -56,7 +88,7 @@ function App() {
               }
             />
           </Routes>
-        </AppContainer>
+        </AppWrapper>
       </Router>
     </>
   );
